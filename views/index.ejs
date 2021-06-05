@@ -35,33 +35,37 @@
         </section>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
-            $(".signup_form").submit(function(){
-                clearErrors();
-                $.post($(this).attr("action"), $(this).serialize(), function(res){
-                    $(".messages").html(res);
+            $(document).ready(() => {
+                $(".signup_form").submit(function(){
+                    clearErrors();
+                    $.post($(this).attr("action"), $(this).serialize(), function(res){
+                        $(".messages").html(res);
+                    });
+                    $(this)[0].reset();
+                    return false;
                 });
-                $(this)[0].reset();
-                return false;
-            });
 
-            $(".login_form").submit(function(){
-                clearErrors();
-                $.post($(this).attr("action"), $(this).serialize(), function(res){
-                    if(res == "Success"){
-                        window.location.replace("students/profile");
-                    }
-                    else{
-                        $(".login_error").html(res);
-                    }
+                $(".login_form").submit(function(){
+                    clearErrors();
+                    $.post($(this).attr("action"), $(this).serialize(), function(res){
+                        if(res == "Success"){
+                            window.location.replace("students/profile");
+                        }
+                        else{
+                            $(".login_error").html(res);
+                        }
+                    });
+                    $(this)[0].reset();
+                    return false;
                 });
-                $(this)[0].reset();
-                return false;
-            });
 
-            function clearErrors(){
-                $(".login_error").html("");
-                $(".messages").html("");
-            }
+                function clearErrors(){
+                    $(".login_error").html("");
+                    $(".messages").html("");
+                }
+
+                console.log(<%= response %>);
+            });
         </script>
     </body>
 </html>
