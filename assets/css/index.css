@@ -12,6 +12,10 @@ body{
     background-color: #29292a;
 }
 
+input:focus{
+    outline: none;
+}
+
 header{
     background-color: #1b1d21;
     color: #34c65c;
@@ -48,8 +52,14 @@ header .login_form input{
     border: none;
 }
 
+header .login_form .login:hover{
+    transition: background-color 0.2s;
+    background-color: #34c65c;
+    color: #29292a;
+}
+
 header .login_form .login{
-    background-color: #1b1d21;
+    background-color: transparent;
     border: 1px solid #34c65c;
     border-radius: 3px;
     margin-left: 20px;
@@ -82,8 +92,14 @@ section .signup_form input{
     padding: 5px;
 }
 
+section .signup_form .signup:hover{
+    transition: background-color 0.2s;
+    background-color: #34c65c;
+    color: #1b1d21;
+}
+
 section .signup_form .signup{
-    background-color: #29292a;
+    background-color: transparent;
     border: 1px solid #34c65c;
     border-radius: 3px;
     padding: 5px 15px;

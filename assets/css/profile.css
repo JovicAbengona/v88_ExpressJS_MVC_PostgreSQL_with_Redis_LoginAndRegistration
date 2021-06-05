@@ -48,6 +48,12 @@ header .login_form input{
     border: none;
 }
 
+header a:hover{
+    transition: background-color 0.2s;
+    background-color: #f25c54;
+    color: #29292a;
+}
+
 header a{
     background-color: transparent;
     border: 1px solid #f25c54;
